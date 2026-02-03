@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Valentine Surprise 💖</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-image: url("https://images.unsplash.com/photo-1517841905240-472988babdf9");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay {
+  background: rgba(0,0,0,0.6);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 18px;
+  width: 90%;
+  max-width: 420px;
+  text-align: center;
+  z-index: 1;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+}
+
+h2 {
+  color: #ff4d6d;
+}
+
+button {
+  padding: 12px 22px;
+  margin: 8px;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.option {
+  background: #ffe0e9;
+}
+
+.yes {
+  background: #ff4d6d;
+  color: white;
+}
+
+.no {
+  background: #ccc;
+}
+
+.error {
+  color: red;
+  margin-top: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+video {
+  width: 100%;
+  border-radius: 15px;
+  margin-top: 15px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="overlay"></div>
+
+<!-- QUESTIONS -->
+<div class="card" id="quiz">
+  <h2>Hey Kevin 😏💖</h2>
+
+  <p>1️⃣ Are you free this Valentine’s Day?</p>
+  <button class="option" onclick="next()">Totally free 😌</button>
+  <button class="option" onclick="next()">Busy but can cancel 😉</button>
+
+  <p>2️⃣ Our Valentine vibe?</p>
+  <button class="option" onclick="next()">Cute & romantic 💕</button>
+  <button class="option" onclick="next()">Fun & flirty 😏</button>
+
+  <p>3️⃣ Who’s luckier if we spend it together?</p>
+  <button class="option" onclick="next()">Me 😎</button>
+  <button class="option" onclick="next()">You 😘</button>
+  <button class="option" onclick="next()">Both 🥰</button>
+
+  <p>4️⃣ How excited are you to see me?</p>
+  <button class="option" onclick="next()">8</button>
+  <button class="option" onclick="next()">9</button>
+  <button class="option" onclick="next()">10 (Obviously)</button>
+
+  <h3>💘 Will you be my Valentine? 💘</h3>
+  <button class="yes" onclick="yes()">YES 💖</button>
+  <button class="no" onclick="no()">NO ❌</button>
+
+  <div class="error hidden" id="error">
+    ❌ Wrong answer Kevin 😌 Try again!
+  </div>
+</div>
+
+<!-- RESULT -->
+<div class="card hidden" id="result">
+  <h2>🎉 Congratulations Kevin! 🎉</h2>
+
+  <p>
+    You are officially the Valentine partner of <b>Gloria</b> 💖<br><br>
+    This means love, laughter, warmth, late-night talks,
+    and memories we’ll always smile about.<br><br>
+    Thank you for choosing <b>YES</b>.  
+    This Valentine’s Day just became ours 💕✨
+  </p>
+
+  <!-- DANCING VIDEO -->
+  <video controls autoplay>
+    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+    Your browser does not support video.
+  </video>
+
+  <p>💃🕺 Let’s celebrate!!!</p>
+</div>
+
+<script>
+function next() {
+  // fun flow, no tracking needed
+}
+
+function no() {
+  document.getElementById("error").classList.remove("hidden");
+}
+
+function yes() {
+  document.getElementById("quiz").classList.add("hidden");
+  document.getElementById("result").classList.remove("hidden");
+}
+</script>
+
+</body>
+</html>
